@@ -6,15 +6,23 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styles/style.css" />
     <link
-      rel="stylesheet"
+      rel="font/tff"
       href="./fonts/Advent_Pro/AdventPro-VariableFont_wdth,wght.ttf"
     />
   </head>
   <body class="flex">
     <div class="container flex">
-      <div class="card flex">
+      <div
+        class="card flex"
+        onclick="PlaySound('fairytail-song')"
+        onmouseleave="StopSound('fairytail-song')"
+      >
         <h1>Fairy Tail</h1>
         <div class="content">
+          <audio id="fairytail-song" autoplay>
+            <source src="./audio/fairy_tail.mp3" />
+            <source src="./audio/fairy_tail.ogg" />
+          </audio>
           <img src="./images/fairytail.png" alt="Fairy Tail" />
           <p>
             The world of Earth-land is home to numerous guilds where wizards
@@ -26,10 +34,18 @@
           >
         </div>
       </div>
-      <div class="card flex">
+      <div
+        class="card flex"
+        onclick="PlaySound('onepiece-song')"
+        onmouseleave="StopSound('onepiece-song')"
+      >
         <h1>One Piece</h1>
         <div class="content">
           <img src="./images/onepiece.png" alt="One Piece" />
+          <audio id="onepiece-song" autoplay>
+            <source src="./audio/one_piece.mp3" />
+            <source src="./audio/one_piece.ogg" />
+          </audio>
           <p>
             The series focuses on Monkey D. Luffy a young man made of rubber
             after unintentionally eating a Devil Fruit...
@@ -39,10 +55,18 @@
           >
         </div>
       </div>
-      <div class="card flex">
+      <div
+        class="card flex"
+        onclick="PlaySound('bleach-song')"
+        onmouseleave="StopSound('bleach-song')"
+      >
         <h1>Bleach</h1>
         <div class="content">
           <img src="./images/bleach.png" alt="Bleach" />
+          <audio id="bleach-song" autoplay>
+            <source src="./audio/bleach.mp3" />
+            <source src="./audio/bleach.ogg" />
+          </audio>
           <p>
             In Karakura Town, high school student Ichigo Kurosaki becomes a
             substitute Soul Reaper...
@@ -54,11 +78,19 @@
           >
         </div>
       </div>
-      <div class="card flex">
+      <div
+        class="card flex"
+        onclick="PlaySound('demon-slayer-song')"
+        onmouseleave="StopSound('demon-slayer-song')"
+      >
         <h1>Demon Slayer</h1>
 
         <div class="content">
           <img src="./images/demonslayer.png" alt="Demon Slayer" />
+          <audio id="demon-slayer-song" autoplay>
+            <source src="./audio/demon_slayer.mp3" />
+            <source src="./audio/demon_slayer.ogg" />
+          </audio>
           <p>
             Tanjiro Kamado is a kind-hearted and intelligent boy who lives with
             his family in the mountains. After his father's death...
@@ -70,10 +102,18 @@
           >
         </div>
       </div>
-      <div class="card flex">
+      <div
+        class="card flex"
+        onclick="PlaySound('hunter-x-hunter-song')"
+        onmouseleave="StopSound('hunter-x-hunter-song')"
+      >
         <h1>Hunter x Hunter</h1>
         <div class="content">
           <img src="./images/hunterxhunter.png" alt="Hunter x Hunter" />
+          <audio id="hunter-x-hunter-song" autoplay>
+            <source src="./audio/hunter_x_hunter.mp3" />
+            <source src="./audio/hunter_x_hunter.ogg" />
+          </audio>
           <p>
             The story follows a young boy named Gon Freecss, who was told all
             his life that both his parents were dead...
@@ -85,10 +125,18 @@
           >
         </div>
       </div>
-      <div class="card flex">
+      <div
+        class="card flex"
+        onclick="PlaySound('pokemon-song')"
+        onmouseleave="StopSound('pokemon-song')"
+      >
         <h1>Pokemon</h1>
         <div class="content">
           <img src="./images/pokemon.jpg" alt="Pokemon" />
+          <audio id="pokemon-song" autoplay>
+            <source src="./audio/pokemon.mp3" />
+            <source src="./audio/pokemon.ogg" />
+          </audio>
           <p>
             The Pokémon franchise is set in a world in which humans coexist with
             creatures known as Pokémon...
@@ -109,8 +157,18 @@
         "max-glare": 0.5, // the maximum "glare" opacity (1 = 100%, 0.5 = 50%)
       });
 
-      //It also supports NodeList
+      // It also supports NodeList
       //   VanillaTilt.init(document.querySelectorAll(".card"));
+      function PlaySound(sound) {
+        const thissound = document.getElementById(sound);
+        thissound.play();
+      }
+
+      function StopSound(sound) {
+        const thissound = document.getElementById(sound);
+        thissound.pause();
+        thissound.currentTime = 0;
+      }
     </script>
   </body>
 </html>
