@@ -9,6 +9,7 @@
       rel="font/tff"
       href="./fonts/Advent_Pro/AdventPro-VariableFont_wdth,wght.ttf"
     />
+    <link rel="stylesheet" href="./styles/sweetalert.css" />
   </head>
   <body class="flex">
     <div class="container flex">
@@ -149,10 +150,16 @@
     </div>
 
     <script type="text/javascript" src="./scripts/vanilla-tilt.js"></script>
+    <script src="./scripts/sweetalert.js"></script>
     <script type="text/javascript">
-      window.confirm(
-        "Welcome to our Anime World! to enjoy listening to anime music :\n Play Track : Click on the card\n Stop Track : Hover out"
+      /*Sweet Alert*/
+      swal(
+        "Welcome to our Anime World! to enjoy listening to anime music :",
+        "Play Track : Click on the card <br /> Stop Track : Hover out",
+        "success"
       );
+
+      /*javascript for tilting the cards*/
       VanillaTilt.init(document.querySelectorAll(".card"), {
         max: 25,
         speed: 400,
@@ -162,6 +169,8 @@
 
       // It also supports NodeList
       //   VanillaTilt.init(document.querySelectorAll(".card"));
+
+      /*adding audio functions on card click and hover out*/
       function PlaySound(sound) {
         const thissound = document.getElementById(sound);
         thissound.play();
